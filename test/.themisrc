@@ -1,0 +1,9 @@
+:so $TRAVIS_BUILD_DIR/vimrc
+:PlugInstall | q
+
+function! Plugin_list()
+  let plugin_list= split(glob(g:plug_home .'/*'), "\n")
+  call map(plugin_list, 'fnamemodify(v:val, ":t")')
+  return plugin_list
+endfunction
+let g:plugin_list = Plugin_list()

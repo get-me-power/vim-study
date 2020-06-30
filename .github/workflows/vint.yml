@@ -30,4 +30,3 @@ jobs:
     - name: Run vint
       run: |
         vint --error --verbose --stat $(find . -type f -name 'vimrc')
-© 2020 GitHub, Inc.

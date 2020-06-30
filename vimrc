@@ -1,5 +1,10 @@
 scriptencoding utf-8
 
+if has('vim_starting') " Changing encoding in Vim at runtime is undefined behavior.
+  set fileencodings=utf-8,sjis,cp932,euc-jp
+  set fileformats=unix,mac,dos
+endif
+
 " setting vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'

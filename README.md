@@ -1,4 +1,4 @@
-# Vim勉強会
+# Vim勉強会用のリポジトリ ![vint](https://github.com/kazukazuinaina/vim-study/workflows/vint/badge.svg?branch=master)
 
 これはサンプルのリポジトリです。
 
@@ -23,7 +23,7 @@
 2. 以下のコマンドを実行します
 
     ```bash
-        git clone https://github.com/{your github name}/vim_study ~/.vim
+        git clone https://github.com/{your github name}/vim-study ~/.vim
     ```
 3. vim-plugをインストールします
 

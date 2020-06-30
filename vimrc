@@ -23,3 +23,34 @@ set ttimeoutlen=10
 if !has('nvim')
   set backspace=indent,eol,start
 endif
+
+syntax enable
+filetype plugin indent on
+
+set number
+set autoindent
+set smartindent
+" インクリメンタルサーチ
+set incsearch
+set nobackup
+set noswapfile
+
+" ファイルタイプごとにインデントを設定
+augroup MyFileTypeIndentOverRide
+  autocmd!
+  autocmd FileType py setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType rb setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
+  autocmd FileType eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
+augroup END
+
+" インデントを一括で行う
+function s:Indent()
+  let save_cursor = getcurpos()
+  execute "normal " . "gg=G"
+  call setpos('.', save_cursor)
+endfunction
+
+" インデントコマンドを定義
+command -nargs=0 Indent call s:Indent()

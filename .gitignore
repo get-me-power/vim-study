@@ -1,0 +1,22 @@
+# pluginがインストールされるディレクトリ
+plugged/*
+
+# vim-plug本体がインストールされるディレクトリ
+autoload/*
+
+# Session
+Session.vim
+
+# Temporary
+.netrwhist
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+# 例のアレ
+.DS_Store
+

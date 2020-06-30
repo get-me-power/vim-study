@@ -15,6 +15,7 @@
 - vim-fugitive
 - fzf
 - fzf.vim
+- sss
 
 # 実行する手順 (Unix)
 

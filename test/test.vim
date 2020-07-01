@@ -11,6 +11,7 @@ function! s:suite.installed_plugin_list()
   call s:assert.match(join(g:plugin_list, "/"), 'fzf.vim')
   call s:assert.match(join(g:plugin_list, "/"), 'vim-easymotion')
   call s:assert.match(join(g:plugin_list, "/"), 'vim-polyglot')
+  call s:assert.match(join(g:plugin_list, "/"), 'vim-cursorword')
 endfunction
 
 function! s:suite.check_airline_runtime()
@@ -40,9 +41,14 @@ function! s:suite.check_fzf_runtime()
   call s:assert.match(&runtimepath, 'fzf')
 endfunction
 
+function! s:suite.check_cursorword_runtime()
+  call s:assert.match(&runtimepath, 'cursorword')
+endfunction
+
 function! s:suite.fail_check()
   call s:assert.not_match(&runtimepath, 'vim-plug')
 endfunction
+
 
 function! s:suite.install_plugin()
   :Plug 'mattn/vim-sl'

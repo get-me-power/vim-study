@@ -6,4 +6,3 @@ function! Plugin_list()
   call map(plugin_list, 'fnamemodify(v:val, ":t")')
   return plugin_list
 endfunction
-let g:plugin_list = Plugin_list()

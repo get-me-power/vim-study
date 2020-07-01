@@ -3,6 +3,7 @@ let s:suite = themis#suite('vimrc_test')
 let s:assert = themis#helper('assert')
 
 function! s:suite.installed_plugin_list()
+  let g:plugin_list = Plugin_list()
   call s:assert.match(join(g:plugin_list, "/"), 'vim-airline')
   call s:assert.match(join(g:plugin_list, "/"), 'vim-airline-themes')
   call s:assert.match(join(g:plugin_list, "/"), 'gina.vim')

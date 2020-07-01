@@ -50,6 +50,5 @@ endfunction
 function! s:suite.install_plugin()
   :Plug 'mattn/vim-sl'
   :PlugInstall | q
-  let Plugin_list() = Plugin_list()
   call s:assert.match(join(Plugin_list(), "/"), 'vim-sl')
 endfunction

@@ -4,18 +4,17 @@
 
 ## 使うプラグインマネージャー
 
-- vim-plug
+- [vim-plug](https://github.com/junegunn/vim-plug)
 
 ## インストールされるVimプラグイン
 
-- vim-airline
-- vim-airline-themes
-- vim-easymotion
-- gina.vim
-- vim-fugitive
-- fzf
-- fzf.vim
-- sss
+- [vim-airline](https://github.com/vim-airline/vim-airline)
+- [vim-airline-themes](https://github.com/vim-airline/vim-airline-themes)
+- [vim-easymotion](https://github.com/easymotion/vim-easymotion)
+- [gina.vim](https://github.com/lambdalisue/gina.vim)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [fzf](https://github.com/junegunn/fzf)
+- [fzf.vim](https://github.com/junegunn/fzf.vim)
 
 # 実行する手順 (Unix)
 
@@ -29,8 +28,7 @@
 3. vim-plugをインストールします
 
     ```bash
-        curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-            https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        sh ~/.vim/bin/vim-plug-installer.sh
     ```
 4. Vimを起動します
 5. :PlugInstallを実行します

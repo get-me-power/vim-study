@@ -1,4 +1,8 @@
-:so $TRAVIS_BUILD_DIR/vimrc
+try
+  :so $TRAVIS_BUILD_DIR/vimrc
+catch
+  :so $GITHUB_WORKSPACE/vimrc
+endtry
 :PlugInstall | q
 
 function! Plugin_list()

@@ -3,15 +3,17 @@ let s:suite = themis#suite('vimrc_test')
 let s:assert = themis#helper('assert')
 
 function! s:suite.installed_plugin_list()
-  let g:plugin_list = Plugin_list()
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-airline')
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-airline-themes')
-  call s:assert.match(join(g:plugin_list, "/"), 'gina.vim')
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-fugitive')
-  call s:assert.match(join(g:plugin_list, "/"), 'fzf.vim')
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-easymotion')
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-polyglot')
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-cursorword')
+  let l:plugin_list = Plugin_list()
+  call s:assert.equal(len(l:plugin_list), 8)
+  let l:plugin_list = join(l:plugin_list, "/")
+  call s:assert.match(l:plugin_list, 'vim-airline')
+  call s:assert.match(l:plugin_list, 'vim-airline-themes')
+  call s:assert.match(l:plugin_list, 'gina.vim')
+  call s:assert.match(l:plugin_list, 'vim-fugitive')
+  call s:assert.match(l:plugin_list, 'fzf.vim')
+  call s:assert.match(l:plugin_list, 'vim-easymotion')
+  call s:assert.match(l:plugin_list, 'vim-polyglot')
+  call s:assert.match(l:plugin_list, 'vim-cursorword')
 endfunction
 
 function! s:suite.check_airline_runtime()
@@ -47,12 +49,4 @@ endfunction
 
 function! s:suite.fail_check()
   call s:assert.not_match(&runtimepath, 'vim-plug')
-endfunction
-
-
-function! s:suite.install_plugin()
-  :Plug 'mattn/vim-sl'
-  :PlugInstall | q
-  let g:plugin_list = Plugin_list()
-  call s:assert.match(join(g:plugin_list, "/"), 'vim-sl')
 endfunction

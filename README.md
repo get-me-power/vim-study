@@ -15,6 +15,8 @@
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [fzf](https://github.com/junegunn/fzf)
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
+- [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+- [vim-cursorword](https://github.com/itchyny/vim-cursorword)
 
 # 実行する手順 (Unix)
 

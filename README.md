@@ -17,6 +17,11 @@
 - [fzf.vim](https://github.com/junegunn/fzf.vim)
 - [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 - [vim-cursorword](https://github.com/itchyny/vim-cursorword)
+- [gruvbox](https://github.com/morhetz/gruvbox)
+- [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
+- [vim-lsp-settings](https://github.com/mattn/vim-lsp-settings)
+- [asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim)
+- [asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim)
 
 # 実行する手順 (Unix)
 

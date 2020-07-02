@@ -7,20 +7,33 @@ endif
 
 " setting vim-plug
 call plug#begin('~/.vim/plugged')
+" statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" git
 Plug 'lambdalisue/gina.vim'
 Plug 'tpope/vim-fugitive'
+" シンタックスハイライト
 Plug 'sheerun/vim-polyglot'
-" fzfはaptで入れても入ると思う
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" インクリメンタルサーチ
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+" テキストオブジェクト
 Plug 'easymotion/vim-easymotion'
+" インターフェース改善
 Plug 'itchyny/vim-cursorword'
+" url見やすくする
+Plug 'tyru/open-browser.vim'
+" ファイラ
+Plug 'cocopon/vaffle.vim'
+" カラースキーム
+Plug 'morhetz/gruvbox'
+" Lsp関連のプラグイン
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 call plug#end()
-
-" setting vim-airline
-set ttimeoutlen=10
 
 " setting vim
 if !has('nvim')
@@ -38,6 +51,10 @@ set incsearch
 set nobackup
 set noswapfile
 
+if has('mouse')
+  set mouse=a
+endif
+
 " ファイルタイプごとにインデントを設定
 augroup MyFileTypeIndentOverRide
   autocmd!
@@ -48,6 +65,21 @@ augroup MyFileTypeIndentOverRide
   autocmd FileType eruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
+" vimのキーバインド設定
+nnoremap <ESC><ESC> :nohlsearch<CR>
+
+if has('terminal')
+  tnoremap <silent><C-u> <C-\><C-N>
+endif
+"スペースをトリガーにする
+let mapleader = "\<Space>"
+
+noremap <Leader>t :terminal<CR>
+nnoremap <Leader>v :vsplit<CR>
+nnoremap <Leader>s :split<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>g :GFiles<CR>
+
 " インデントを一括で行う
 function s:Indent()
   let save_cursor = getcurpos()
@@ -57,3 +89,15 @@ endfunction
 
 " インデントコマンドを定義
 command -nargs=0 Indent call s:Indent()
+
+" setting vim-airline
+set ttimeoutlen=10
+let g:airline#extensions#tabline#enabled = 1
+
+
+" setting vim-lsp
+nnoremap <expr> <silent> <C-]> execute(':LspDefinition') =~ "not supported" ? "\<C-]>" : ":echo<cr>"
+
+" setting open-blowser.vim
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)

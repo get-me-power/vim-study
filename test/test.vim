@@ -21,7 +21,6 @@ function! s:suite.check_airline_runtime()
   call s:assert.match(&runtimepath, 'vim-airline-themes')
 endfunction
 
-
 function! s:suite.check_gina_runtime()
   call s:assert.match(&runtimepath, 'gina.vim')
 endfunction

@@ -27,7 +27,7 @@ if !has('nvim')
   set backspace=indent,eol,start
 endif
 
-syntax enable
+"syntax enable
 filetype plugin indent on
 
 set number

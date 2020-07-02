@@ -1,7 +1,7 @@
 language: generic
 
-branches:	
-  only:	
+branches:
+  only:
     - "master"
 
 install:
@@ -23,10 +23,9 @@ env:
   - VIM_VERSION=8.2.0000
   - VIM_VERSION=8.1.0000
   - VIM_VERSION=8.0.0000
-  - VIM_VERSION=7.4
-
 
 script:
   - sh bin/vim-plug-installer.sh
+  - export PATH=$HOME/vim-$VIM_VERSION/bin:$PATH
   - vim --version
   - /tmp/themis/bin/themis --reporter spec

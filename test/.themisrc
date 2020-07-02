@@ -11,5 +11,4 @@ try
   catch
     :so $GITHUB_WORKSPACE/vimrc
 endtry
-
-:PlugInstall | sleep 10000m
+:PlugInstall | sleep 20000m | q

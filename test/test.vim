@@ -4,7 +4,7 @@ let s:assert = themis#helper('assert')
 
 function! s:suite.installed_plugin_list()
   let l:plugin_list = Plugin_list()
-  call s:assert.equal(len(l:plugin_list), 8)
+  call s:assert.equal(len(l:plugin_list), 15)
   let l:plugin_list = join(l:plugin_list, "/")
   call s:assert.match(l:plugin_list, 'vim-airline')
   call s:assert.match(l:plugin_list, 'vim-airline-themes')
@@ -14,6 +14,8 @@ function! s:suite.installed_plugin_list()
   call s:assert.match(l:plugin_list, 'vim-easymotion')
   call s:assert.match(l:plugin_list, 'vim-polyglot')
   call s:assert.match(l:plugin_list, 'vim-cursorword')
+  call s:assert.match(l:plugin_list, 'open-browser.vim')
+  call s:assert.match(l:plugin_list, 'vaffle.vim')
 endfunction
 
 function! s:suite.check_airline_runtime()
@@ -44,6 +46,14 @@ endfunction
 
 function! s:suite.check_cursorword_runtime()
   call s:assert.match(&runtimepath, 'cursorword')
+endfunction
+
+function! s:suite.check_openbrowser_runtime()
+  call s:assert.match(&runtimepath, 'open-browser.vim')
+endfunction
+
+function! s:suite.check_vaffle_runtime()
+  call s:assert.match(&runtimepath, 'vaffle.vim')
 endfunction
 
 function! s:suite.fail_check()

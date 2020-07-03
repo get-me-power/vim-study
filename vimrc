@@ -55,6 +55,10 @@ if has('mouse')
   set mouse=a
 endif
 
+if &t_Co != 256
+  set t_Co=256
+endif
+
 " ファイルタイプごとにインデントを設定
 augroup MyFileTypeIndentOverRide
   autocmd!
@@ -92,8 +96,7 @@ command -nargs=0 Indent call s:Indent()
 
 " setting vim-airline
 set ttimeoutlen=10
-let g:airline#extensions#tabline#enabled = 1
-
+let g:airline_extensions = ['branch', 'fzf', 'tabline']
 
 " setting vim-lsp
 nnoremap <expr> <silent> <C-]> execute(':LspDefinition') =~ "not supported" ? "\<C-]>" : ":echo<cr>"
@@ -101,3 +104,6 @@ nnoremap <expr> <silent> <C-]> execute(':LspDefinition') =~ "not supported" ? "\
 " setting open-blowser.vim
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
+
+" setting fzf
+let g:fzf_layout = { 'window': '10new' }
